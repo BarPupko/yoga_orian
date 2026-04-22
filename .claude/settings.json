@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(mkdir -p /tmp/yoga_design)",
+      "Read(//tmp/**)",
+      "Bash(tar -xf \"C:/Users/hilto/.claude/projects/c--Projects-yoga-orian/45a3d472-cbf6-4a4e-b2e8-e286e422fcff/tool-results/design_content.txt\")",
+      "Bash(tar -xzf \"C:/Users/hilto/.claude/projects/c--Projects-yoga-orian/45a3d472-cbf6-4a4e-b2e8-e286e422fcff/tool-results/webfetch-1776888628277-82ftkv.bin\" -C /tmp/yoga_design)",
+      "Bash(tar -xf \"/mnt/c/Users/hilto/.claude/projects/c--Projects-yoga-orian/45a3d472-cbf6-4a4e-b2e8-e286e422fcff/tool-results/webfetch-1776888628277-82ftkv.bin\")",
+      "Bash(tar -xf \"C:/Users/hilto/.claude/projects/c--Projects-yoga-orian/45a3d472-cbf6-4a4e-b2e8-e286e422fcff/tool-results/design_content.txt\" -C /tmp/yoga_design)",
+      "Bash(cp \"C:/Users/hilto/.claude/projects/c--Projects-yoga-orian/45a3d472-cbf6-4a4e-b2e8-e286e422fcff/tool-results/design_content.txt\" /tmp/design_content.tar)",
+      "Bash(tar -xf /tmp/design_content.tar -C /tmp/yoga_design)",
+      "Bash(mkdir -p c:/Projects/yoga_orian/src/screens)",
+      "Bash(cp -r /tmp/yoga_design/yoga-by-ori/project/* c:/Projects/yoga_orian/)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}
