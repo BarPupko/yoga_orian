@@ -2,7 +2,7 @@
 // Accessed via instructor mode toggle
 
 const DEFAULT_CLASSES = [
-  { id: 'c1', type: 'האטה בוקר',     date: '2026-04-24', time: '07:00', location: 'סטודיו · רחוב הזית 12',  capacity: 12, attendees: [
+  { id: 'c1', type: 'האטה בוקר',     date: '2026-04-24', time: '07:00', location: 'אברהם דנינו 12',  capacity: 12, attendees: [
       { id: 'u1', name: 'מיכל כהן',    phone: '050-1234567', joined: '10:22' },
       { id: 'u2', name: 'נועה לוי',    phone: '052-2345678', joined: '11:04' },
       { id: 'u3', name: 'תמר אברהם', phone: '054-3456789', joined: '12:18' },
