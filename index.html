@@ -756,6 +756,18 @@ button, [role="button"] { cursor: pointer; }
   box-shadow: 0 8px 20px -6px rgba(140, 50, 180, 0.4);
 }
 
+/* ── Calendar export buttons ── */
+.cal-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--hair);
+  font-size: 13px; font-weight: 600; font-family: var(--font-display);
+  cursor: pointer; text-decoration: none; color: var(--ink);
+  background: var(--paper); transition: background 0.18s;
+}
+.cal-btn:hover { background: var(--surface); }
+.cal-btn.gcal { border-color: #4285F4; color: #4285F4; }
+.cal-btn.ical { border-color: #555; color: #555; }
+
 /* ---- LIBRARY ---- */
 .library { padding: 4px 18px 0; }
 .library h1 {
@@ -2003,17 +2015,23 @@ button, [role="button"] { cursor: pointer; }
   max-width: 26ch; line-height: 1.55; margin-bottom: 28px; font-weight: 400;
 }
 
-/* Google button */
-.google-signin-btn {
-  width: 100%; display: flex; align-items: center; justify-content: center;
-  gap: 10px; padding: 14px 20px; border-radius: 999px;
-  border: 1.5px solid var(--hair); background: var(--paper);
-  font-size: 14px; font-weight: 600; color: var(--ink);
-  box-shadow: 0 3px 12px -4px rgba(0,0,0,0.1);
-  transition: all .25s; cursor: pointer; font-family: var(--font-ui);
+/* Social sign-in buttons (Google + Apple side by side) */
+.social-btns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;
 }
-.google-signin-btn:hover { background: var(--paper-2); transform: translateY(-1px); }
-.google-signin-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.social-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 14px 10px; border-radius: 14px;
+  border: 1.5px solid var(--hair); font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all .25s; font-family: var(--font-ui);
+  box-shadow: 0 2px 10px -4px rgba(0,0,0,0.08);
+}
+.social-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 18px -6px rgba(0,0,0,0.14); }
+.social-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.social-btn.google { background: var(--paper); color: var(--ink); }
+.social-btn.google:hover:not(:disabled) { background: var(--paper-2); }
+.social-btn.apple { background: #111; color: #fff; border-color: #111; }
+.social-btn.apple:hover:not(:disabled) { background: #2a2a2a; }
 
 .auth-or {
   display: flex; align-items: center; width: 100%;
@@ -2059,6 +2077,28 @@ button, [role="button"] { cursor: pointer; }
   appearance: none; background: none; border: none;
   color: var(--accent); font-size: 13px; font-weight: 600;
   margin-top: 16px; padding: 6px; cursor: pointer; font-family: var(--font-ui);
+}
+
+/* Admin badge button */
+.admin-badge-btn {
+  margin-top: 10px; padding: 8px 20px; border-radius: 999px;
+  background: linear-gradient(130deg, #ff9800, #e91e63);
+  color: #fff; font-weight: 700; font-size: 13px;
+  border: none; cursor: pointer; box-shadow: 0 4px 14px -4px rgba(233,30,99,0.4);
+  font-family: var(--font-display);
+}
+
+/* Gender pills */
+.gender-pill {
+  flex: 1; padding: 9px 12px; border-radius: 999px;
+  border: 1.5px solid var(--hair); background: var(--paper);
+  font-family: var(--font-display); font-size: 14px; font-weight: 600;
+  color: var(--muted); cursor: pointer; transition: all 0.18s;
+}
+.gender-pill.on {
+  background: linear-gradient(130deg, var(--cta-a), var(--cta-b));
+  color: #fff; border-color: transparent;
+  box-shadow: 0 4px 12px -4px rgba(180,60,140,0.4);
 }
 
 /* Logged-in profile */
@@ -2598,7 +2638,18 @@ const Icon = ({ d, size = 20, stroke = 'currentColor', fill = 'none', children, 
 
 const IconHome = (p) => <Icon {...p}><path d="M4 11 L12 4 L20 11 V20 H4 Z" /><path d="M10 20 V14 H14 V20" /></Icon>;
 const IconCal  = (p) => <Icon {...p}><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9 H21"/><path d="M8 3 V7"/><path d="M16 3 V7"/></Icon>;
-const IconLib  = (p) => <Icon {...p}><circle cx="12" cy="8" r="3"/><path d="M6 20 C6 15 8 13 12 13 C16 13 18 15 18 20"/></Icon>;
+const IconLib  = (p) => (
+  <Icon {...p}>
+    {/* Crescent lunge yoga pose — warrior silhouette */}
+    <circle cx="17.5" cy="2.8" r="1.5"/>            {/* head */}
+    <path d="M17 4.2 Q15.5 5 16 6.5"/>              {/* hair/neck */}
+    <path d="M16.5 4.5 L20.5 1.5"/>                 {/* raised arm */}
+    <path d="M16.5 4.5 L13 9.5"/>                   {/* torso */}
+    <path d="M13 9.5 L9.5 13.5 L7 18 L4.5 20.5"/>  {/* front bent leg */}
+    <path d="M13 9.5 L17 12.5 L21.5 14.5"/>         {/* back extended leg */}
+    <path d="M21.5 14.5 L23 16.5"/>                  {/* back foot */}
+  </Icon>
+);
 const IconMedi = (p) => <Icon {...p}><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></Icon>;
 const IconPlay = (p) => <Icon {...p}><path d="M7 5 L19 12 L7 19 Z" fill="currentColor"/></Icon>;
 const IconPause= (p) => <Icon {...p}><rect x="7" y="5" width="4" height="14" fill="currentColor"/><rect x="13" y="5" width="4" height="14" fill="currentColor"/></Icon>;
@@ -2885,6 +2936,41 @@ function availabilityFor(date) {
   }));
 }
 
+// ── Calendar helpers ────────────────────────────────────────────────────
+function calDateStr(date, timeStr, offsetMin = 0) {
+  const [h, m] = timeStr.split(':').map(Number);
+  const d = new Date(date);
+  d.setHours(h, m + offsetMin, 0, 0);
+  return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+}
+function googleCalUrl({ date, time, type, durationMin }) {
+  const start = calDateStr(date, time);
+  const end   = calDateStr(date, time, durationMin);
+  const title = encodeURIComponent('שיעור יוגה עם אוריאן · ' + type);
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${encodeURIComponent('שיעור יוגה · אוריאן')}`;
+}
+function buildICS({ date, time, type, durationMin }) {
+  const start = calDateStr(date, time);
+  const end   = calDateStr(date, time, durationMin);
+  const uid   = `yoga-orian-${start}@app`;
+  return [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//yoga-orian//app//HE',
+    'BEGIN:VEVENT',
+    `DTSTART:${start}`, `DTEND:${end}`,
+    `SUMMARY:שיעור יוגה עם אוריאן · ${type}`,
+    'DESCRIPTION:שיעור יוגה עם אוריאן',
+    `UID:${uid}`,
+    'END:VEVENT', 'END:VCALENDAR',
+  ].join('\r\n');
+}
+function downloadICS(content, filename) {
+  const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = Object.assign(document.createElement('a'), { href: url, download: filename });
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000);
+}
+
 function Booking({ go }) {
   const [anchor, setAnchor] = React.useState(() => {
     const d = new Date();
@@ -2902,6 +2988,10 @@ function Booking({ go }) {
   const [sessionType, setSessionType] = React.useState('private');
   const [slot, setSlot] = React.useState(null);
   const [confirmed, setConfirmed] = React.useState(false);
+  const [guestOpen, setGuestOpen] = React.useState(false);
+  const [guestForm, setGuestForm] = React.useState({ name: '', phone: '', email: '' });
+  const [guestSent, setGuestSent] = React.useState(false);
+  const [guestLoading, setGuestLoading] = React.useState(false);
 
   const week = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(anchor);
@@ -2916,13 +3006,67 @@ function Booking({ go }) {
   const monthLabel = `${HE_MONTHS[selected.getMonth()]} ${selected.getFullYear()}`;
 
   const canConfirm = slot != null;
+  const durationMin = sessionType === 'private' ? 60 : 75;
 
   const bookLabel = {
     date: selected.toLocaleDateString('he-IL', { weekday: 'long', day: 'numeric', month: 'long' }),
     time: slot,
-    type: sessionType === 'private' ? 'שיעור פרטי · 60 דק׳' : 'שיעור קבוצתי · 75 דק׳',
+    type: sessionType === 'private' ? 'שיעור פרטי' : 'שיעור קבוצתי',
+    typeDisplay: sessionType === 'private' ? 'שיעור פרטי · 60 דק׳' : 'שיעור קבוצתי · 75 דק׳',
     price: sessionType === 'private' ? '₪ 260' : '₪ 90',
   };
+
+  async function handleConfirm() {
+    const currentUser = firebase.auth().currentUser;
+    if (currentUser) {
+      // Logged-in: save booking to Firebase
+      try {
+        const dateStr = selected.toISOString().slice(0, 10);
+        const ref = firebase.database().ref('users/' + currentUser.uid);
+        const bookingKey = dateStr.replace(/-/g, '') + '_' + (slot || '').replace(':', '');
+        await ref.child('bookings/' + bookingKey).set({
+          date: dateStr,
+          time: slot,
+          type: bookLabel.type,
+          durationMin,
+          createdAt: new Date().toISOString(),
+        });
+        // Increment bookingsCount
+        await ref.transaction(d => {
+          const data = d || {};
+          return { ...data, bookingsCount: (data.bookingsCount || 0) + 1 };
+        });
+      } catch (e) {}
+      setConfirmed(true);
+    } else {
+      // Not logged in — show guest form
+      setGuestOpen(true);
+    }
+  }
+
+  async function submitGuest(e) {
+    e.preventDefault();
+    if (!guestForm.name.trim() || !guestForm.phone.trim()) return;
+    setGuestLoading(true);
+    try {
+      const dateStr = selected.toISOString().slice(0, 10);
+      await firebase.database().ref('pendingBookings').push({
+        name: guestForm.name.trim(),
+        phone: guestForm.phone.trim(),
+        email: guestForm.email.trim(),
+        date: dateStr,
+        time: slot,
+        type: bookLabel.type,
+        durationMin,
+        status: 'pending',
+        createdAt: new Date().toISOString(),
+      });
+      setGuestSent(true);
+    } catch (e) {
+    } finally {
+      setGuestLoading(false);
+    }
+  }
 
   return (
     <div className="screen">
@@ -2932,8 +3076,8 @@ function Booking({ go }) {
       </div>
 
       <div className="booking">
-        <h1>בואי נמצא<br/><span style={{ fontStyle: 'italic', color: 'var(--accent-deep)' }}>זמן בשבילך</span></h1>
-        <div className="sub">בחרי יום, שעה וסוג השיעור. אשלח אישור בוואטסאפ.</div>
+        <h1>בואו נמצא<br/><span style={{ fontStyle: 'italic', color: 'var(--accent-deep)' }}>זמן בשבילכם</span></h1>
+        <div className="sub">בחרו יום, שעה וסוג השיעור. אשלח אישור בוואטסאפ.</div>
 
         <div className="segment" role="tablist">
           <button className={sessionType === 'private' ? 'on' : ''} onClick={() => setSessionType('private')}>
@@ -2992,16 +3136,17 @@ function Booking({ go }) {
           <div className="summary">
             <div className="srow"><span className="sk">תאריך</span><span className="sv">{bookLabel.date}</span></div>
             <div className="srow"><span className="sk">שעה</span><span className="sv">{bookLabel.time}</span></div>
-            <div className="srow"><span className="sk">סוג שיעור</span><span className="sv">{bookLabel.type}</span></div>
+            <div className="srow"><span className="sk">סוג שיעור</span><span className="sv">{bookLabel.typeDisplay}</span></div>
             <div className="srow"><span className="sk">עלות</span><span className="sv">{bookLabel.price}</span></div>
           </div>
         )}
 
-        <button className="cta" disabled={!canConfirm} onClick={() => setConfirmed(true)}>
+        <button className="cta" disabled={!canConfirm} onClick={handleConfirm}>
           {canConfirm ? 'לאישור השיעור' : 'בחרי שעה לסיום הקביעה'}
         </button>
       </div>
 
+      {/* ── Confirmation modal (logged-in booking) ── */}
       {confirmed && (
         <div className="confirm-veil" onClick={() => setConfirmed(false)}>
           <div className="confirm" onClick={e => e.stopPropagation()}>
@@ -3011,8 +3156,78 @@ function Booking({ go }) {
               נתראה {bookLabel.date} בשעה {bookLabel.time}.<br/>
               אישור יישלח אליך בוואטסאפ.
             </p>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center', margin: '12px 0' }}>
+              <a
+                href={googleCalUrl({ date: selected, time: slot, type: bookLabel.typeDisplay, durationMin })}
+                target="_blank" rel="noopener noreferrer"
+                className="cal-btn gcal"
+              >📅 Google Calendar</a>
+              <button
+                className="cal-btn ical"
+                onClick={() => downloadICS(
+                  buildICS({ date: selected, time: slot, type: bookLabel.typeDisplay, durationMin }),
+                  'yoga-orian.ics'
+                )}
+              >🍎 Apple / iCal</button>
+            </div>
             <div className="namaste">נמסטה · אוריאן 🙏</div>
             <button onClick={() => { setConfirmed(false); setSlot(null); }}>תודה</button>
+          </div>
+        </div>
+      )}
+
+      {/* ── Guest booking modal ── */}
+      {guestOpen && (
+        <div className="confirm-veil" onClick={() => { if (!guestSent) { setGuestOpen(false); } }}>
+          <div className="confirm" onClick={e => e.stopPropagation()} style={{ maxWidth: 340 }}>
+            {guestSent ? (
+              <>
+                <div className="check"><IconCheck size={28} /></div>
+                <h3>הבקשה נשלחה</h3>
+                <p>בקשתך לשיעור ב-{bookLabel.date} בשעה {slot} נשלחה לאישור.<br/>תקבל הודעה לאחר שהמנהל יאשר.</p>
+                <button onClick={() => { setGuestOpen(false); setGuestSent(false); setGuestForm({ name: '', phone: '', email: '' }); setSlot(null); }}>סגור</button>
+              </>
+            ) : (
+              <>
+                <h3>הרשמה כאורח/ת</h3>
+                <p style={{ fontSize: 13, color: 'var(--muted)', margin: '4px 0 16px' }}>
+                  השיעור יאושר על ידי המנהל. כדי לקבוע שיעורים מיד —{' '}
+                  <button style={{ background: 'none', border: 'none', color: 'var(--accent)', textDecoration: 'underline', cursor: 'pointer', padding: 0, font: 'inherit' }}
+                    onClick={() => { setGuestOpen(false); /* could go to profile */ }}>
+                    הצטרפי / כנסי לחשבון
+                  </button>
+                </p>
+                <form onSubmit={submitGuest} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <input
+                    placeholder="שם מלא *"
+                    value={guestForm.name}
+                    onChange={e => setGuestForm(f => ({...f, name: e.target.value}))}
+                    required
+                    style={{ padding: '10px 12px', borderRadius: 10, border: '1px solid var(--hair)', fontFamily: 'var(--font-display)', fontSize: 14 }}
+                  />
+                  <input
+                    placeholder="מספר טלפון *"
+                    type="tel"
+                    value={guestForm.phone}
+                    onChange={e => setGuestForm(f => ({...f, phone: e.target.value}))}
+                    required
+                    style={{ padding: '10px 12px', borderRadius: 10, border: '1px solid var(--hair)', fontFamily: 'var(--font-display)', fontSize: 14 }}
+                  />
+                  <input
+                    placeholder="אימייל (לקבלת אישור)"
+                    type="email"
+                    value={guestForm.email}
+                    onChange={e => setGuestForm(f => ({...f, email: e.target.value}))}
+                    style={{ padding: '10px 12px', borderRadius: 10, border: '1px solid var(--hair)', fontFamily: 'var(--font-display)', fontSize: 14 }}
+                  />
+                  <button type="submit" className="cta" disabled={guestLoading} style={{ margin: 0, marginTop: 4 }}>
+                    {guestLoading ? 'שולח...' : 'שלח בקשה'}
+                  </button>
+                </form>
+                <button style={{ background: 'none', border: 'none', color: 'var(--muted)', cursor: 'pointer', marginTop: 8, fontSize: 13 }}
+                  onClick={() => setGuestOpen(false)}>ביטול</button>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -3269,7 +3484,7 @@ const CLASS_TYPES = ['האטה בוקר', 'וויניאסה זרימה', 'יין
 const LOCATIONS   = ['סטודיו · רחוב הזית 12', 'הפארק הגדול · כיכר דשא', 'חוף הים · תל ברוך', 'בית הלקוחה', 'מקוון · זום'];
 
 function Dashboard({ onExit }) {
-  const [view, setView] = React.useState('overview'); // overview | classes | add | students
+  const [view, setView] = React.useState('overview'); // overview | classes | add | students | pending
   const [classes, setClasses] = React.useState(() => {
     try {
       const saved = localStorage.getItem('yo-classes');
@@ -3372,6 +3587,7 @@ function Dashboard({ onExit }) {
           { id: 'add',      name: 'הוסף',    Icon: IconPlus  },
           { id: 'students', name: 'תלמידות', Icon: IconUsers },
           { id: 'nav',      name: 'ניווט',   Icon: IconNav   },
+          { id: 'pending',  name: 'אורחים',  Icon: IconUsers },
         ].map(t => (
           <button key={t.id} className={view === t.id ? 'on' : ''} onClick={() => setView(t.id)}>
             <t.Icon size={15} />
@@ -3405,6 +3621,9 @@ function Dashboard({ onExit }) {
         {view === 'nav' && (
           <NavManager />
         )}
+        {view === 'pending' && (
+          <PendingBookings />
+        )}
       </div>
 
       {editingClass && (
@@ -3422,6 +3641,86 @@ function Dashboard({ onExit }) {
         />
       )}
       {toast && <div className="toast">{toast}</div>}
+    </div>
+  );
+}
+
+// ── Pending guest bookings (admin view) ─────────────────────────────────
+function PendingBookings() {
+  const [items, setItems] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const ref = firebase.database().ref('pendingBookings');
+    ref.on('value', snap => {
+      const data = snap.val() || {};
+      const list = Object.entries(data).map(([key, val]) => ({ key, ...val }));
+      list.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+      setItems(list);
+      setLoading(false);
+    });
+    return () => ref.off();
+  }, []);
+
+  async function approve(key, item) {
+    await firebase.database().ref('pendingBookings/' + key + '/status').set('approved');
+    // Optionally send email via mailto link
+    if (item.email) {
+      window.open(`mailto:${item.email}?subject=${encodeURIComponent('שיעור יוגה אושר · אוריאן')}&body=${encodeURIComponent(`שלום ${item.name},\n\nהשיעור ב-${item.date} בשעה ${item.time} אושר.\n\nנתראה! 🙏\nאוריאן`)}`);
+    }
+  }
+
+  async function decline(key) {
+    await firebase.database().ref('pendingBookings/' + key + '/status').set('declined');
+  }
+
+  if (loading) return <div style={{ padding: 24, color: 'var(--muted)' }}>טוען...</div>;
+  if (!items.length) return (
+    <div style={{ padding: 24, textAlign: 'center', color: 'var(--muted)' }}>
+      <div style={{ fontSize: 36, marginBottom: 8 }}>✅</div>
+      אין בקשות ממתינות
+    </div>
+  );
+
+  const statusLabel = { pending: '⏳ ממתין', approved: '✅ אושר', declined: '❌ נדחה' };
+  const statusColor = { pending: '#f59e0b', approved: '#22c55e', declined: '#ef4444' };
+
+  return (
+    <div style={{ padding: '16px 0' }}>
+      <div style={{ padding: '0 16px 12px', fontWeight: 700, fontSize: 16 }}>בקשות אורחים · {items.filter(i => i.status === 'pending').length} ממתינות</div>
+      {items.map(item => (
+        <div key={item.key} style={{
+          margin: '0 16px 12px', padding: '14px 16px', borderRadius: 14,
+          background: 'var(--surface)', border: '1px solid var(--hair)',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
+            <div>
+              <div style={{ fontWeight: 700, fontSize: 15 }}>{item.name}</div>
+              <div style={{ color: 'var(--muted)', fontSize: 12 }}>{item.phone}{item.email ? ' · ' + item.email : ''}</div>
+            </div>
+            <span style={{ fontSize: 12, fontWeight: 600, color: statusColor[item.status] || '#888' }}>
+              {statusLabel[item.status] || item.status}
+            </span>
+          </div>
+          <div style={{ fontSize: 13, color: 'var(--ink)', marginBottom: 10 }}>
+            {item.type} · {item.date} {item.time}
+          </div>
+          {item.status === 'pending' && (
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button
+                onClick={() => approve(item.key, item)}
+                style={{ flex: 1, padding: '9px', borderRadius: 999, border: 'none', background: '#22c55e', color: '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>
+                אשר
+              </button>
+              <button
+                onClick={() => decline(item.key)}
+                style={{ flex: 1, padding: '9px', borderRadius: 999, border: 'none', background: '#ef444420', color: '#ef4444', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>
+                דחה
+              </button>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -4002,6 +4301,13 @@ function App() {
     window.addEventListener('yo-nav-changed', onNav);
     return () => window.removeEventListener('yo-nav-changed', onNav);
   }, []);
+
+  // Listen for mode switch events (e.g. from admin button in Profile)
+  React.useEffect(() => {
+    const onSwitch = (e) => setMode(e.detail);
+    window.addEventListener('yo-switch-mode', onSwitch);
+    return () => window.removeEventListener('yo-switch-mode', onSwitch);
+  }, []);
   const [tweaks, _setTweaks] = React.useState(() => {
     try {
       const saved = JSON.parse(localStorage.getItem('yo-tweaks') || '{}');
@@ -4121,6 +4427,9 @@ function hebrewAuthError(code) {
     'auth/popup-closed-by-user':   'חלון הכניסה נסגר',
     'auth/cancelled-popup-request':'',
     'auth/network-request-failed': 'בעיית רשת — בדקי חיבור לאינטרנט',
+    'auth/account-exists-with-different-credential': 'כתובת האימייל הזו כבר קשורה לשיטת כניסה אחרת',
+    'auth/popup-blocked': 'הדפדפן חסם את חלון הכניסה — אפשרי חלונות קופצים לאתר זה',
+    'auth/operation-not-allowed': 'שיטת כניסה זו אינה מופעלת בפרויקט Firebase',
   };
   return map[code] || 'שגיאה: ' + (code || 'לא ידועה');
 }
@@ -4133,6 +4442,15 @@ function GoogleSVG() {
       <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
       <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
       <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+    </svg>
+  );
+}
+
+// ── Apple SVG logo ─────────────────────────────────────────────────────
+function AppleSVG() {
+  return (
+    <svg width="16" height="18" viewBox="0 0 814 1000" fill="currentColor" stroke="none">
+      <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105-42.6-154.5-131.7C179.9 752.8 142.2 661.7 142.2 575c0-146.4 95.2-223.7 187.5-223.7 67.5 0 116.5 43.3 156.5 43.3 38.3 0 97.1-45.8 172.8-45.8zm-141-73.4c30.5-36.7 52.6-87.9 52.6-139.2 0-7.1-.6-14.3-1.9-20.1-49.8 1.9-108.9 33.7-144.6 75.7-27.7 31.9-54.5 83.1-54.5 135.1 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 44.5 0 100-29.9 133-70.9z"/>
     </svg>
   );
 }
@@ -4177,7 +4495,7 @@ function ProfileTabIcon({ size = 18, active }) {
 function Profile() {
   const [user, setUser] = React.useState(undefined); // undefined = auth loading
   const [mode, setMode] = React.useState('login');   // 'login' | 'register'
-  const [form, setForm] = React.useState({ name: '', email: '', password: '' });
+  const [form, setForm] = React.useState({ name: '', email: '', password: '', gender: 'female' });
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
   const [stats, setStats] = React.useState(null);
@@ -4238,8 +4556,8 @@ function Profile() {
     try {
       const cred = await firebase.auth().createUserWithEmailAndPassword(form.email, form.password);
       await cred.user.updateProfile({ displayName: form.name.trim() });
-      // Write name immediately so DB has it
-      await firebase.database().ref('users/' + cred.user.uid).update({ name: form.name.trim() });
+      // Write name + gender immediately so DB has it
+      await firebase.database().ref('users/' + cred.user.uid).update({ name: form.name.trim(), gender: form.gender });
     } catch (err) {
       setError(hebrewAuthError(err.code));
     } finally { setLoading(false); }
@@ -4259,9 +4577,23 @@ function Profile() {
     setLoading(true); setError('');
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: 'select_account' });
       await firebase.auth().signInWithPopup(provider);
     } catch (err) {
       if (err.code !== 'auth/cancelled-popup-request') setError(hebrewAuthError(err.code));
+    } finally { setLoading(false); }
+  }
+
+  async function doApple() {
+    setLoading(true); setError('');
+    try {
+      const provider = new firebase.auth.OAuthProvider('apple.com');
+      provider.addScope('email');
+      provider.addScope('name');
+      await firebase.auth().signInWithPopup(provider);
+    } catch (err) {
+      if (err.code !== 'auth/cancelled-popup-request' && err.code !== 'auth/popup-closed-by-user')
+        setError(hebrewAuthError(err.code));
     } finally { setLoading(false); }
   }
 
@@ -4303,25 +4635,45 @@ function Profile() {
               : 'צרי חשבון ועקבי אחרי המסע שלך ביוגה עם אוריאן'}
           </div>
 
-          <button className="google-signin-btn" onClick={doGoogle} disabled={loading}>
-            <GoogleSVG />
-            <span>המשיכי עם Google</span>
-          </button>
+          <div className="social-btns">
+            <button className="social-btn google" onClick={doGoogle} disabled={loading}>
+              <GoogleSVG />
+              <span>Google</span>
+            </button>
+            <button className="social-btn apple" onClick={doApple} disabled={loading}>
+              <AppleSVG />
+              <span>Apple</span>
+            </button>
+          </div>
 
           <div className="auth-or"><span>או</span></div>
 
           <form className="auth-form" onSubmit={mode === 'login' ? doLogin : doRegister}>
             {mode === 'register' && (
-              <div className="auth-field">
-                <span className="auth-field-icon"><IconUser size={15}/></span>
-                <input
-                  placeholder="שם מלא"
-                  value={form.name}
-                  onChange={e => setF('name', e.target.value)}
-                  autoComplete="name"
-                  required
-                />
-              </div>
+              <>
+                <div className="auth-field">
+                  <span className="auth-field-icon"><IconUser size={15}/></span>
+                  <input
+                    placeholder="שם מלא"
+                    value={form.name}
+                    onChange={e => setF('name', e.target.value)}
+                    autoComplete="name"
+                    required
+                  />
+                </div>
+                <div className="gender-toggle" style={{ display: 'flex', gap: 8, marginBottom: 2 }}>
+                  <button
+                    type="button"
+                    className={`gender-pill ${form.gender === 'female' ? 'on' : ''}`}
+                    onClick={() => setF('gender', 'female')}
+                  >נקבה</button>
+                  <button
+                    type="button"
+                    className={`gender-pill ${form.gender === 'male' ? 'on' : ''}`}
+                    onClick={() => setF('gender', 'male')}
+                  >זכר</button>
+                </div>
+              </>
             )}
             <div className="auth-field">
               <span className="auth-field-icon" style={{fontFamily:'monospace'}}>@</span>
@@ -4355,12 +4707,18 @@ function Profile() {
   }
 
   // ── Logged in ──
-  const displayName = user.displayName || stats?.name || user.email?.split('@')[0] || 'מתרגלת';
+  const isMale = stats?.gender === 'male';
+  // gt(female, male) — gender text helper
+  const gt = (female, male) => isMale ? male : female;
+
+  const displayName = user.displayName || stats?.name || user.email?.split('@')[0] || gt('מתרגלת', 'מתרגל');
   const initial = displayName.charAt(0).toUpperCase();
   const sessions = stats?.sessions || 1;
-  const totalMin = sessions * 45;
+  const bookingsCount = stats?.bookingsCount || 0;
+  const rankScore = sessions + bookingsCount * 2;
+  const totalMin = (sessions * 45) + (bookingsCount * 60);
   const totalStr = totalMin >= 60
-    ? `${Math.floor(totalMin/60)}ש׳ ${totalMin%60 > 0 ? totalMin%60 + 'ד׳' : ''}`
+    ? `${Math.floor(totalMin/60)}ש׳${totalMin%60 > 0 ? ' ' + totalMin%60 + 'ד׳' : ''}`
     : `${totalMin}ד׳`;
   const streak = Math.min(sessions, 7);
 
@@ -4371,13 +4729,20 @@ function Profile() {
       })
     : '—';
 
-  // Next lesson: look for earliest upcoming booking in localStorage
-  let nextLesson = 'זרימת בוקר רכה · 25 דקות';
+  // Rank from combined score
+  let rankLabel;
+  if (rankScore < 5)       rankLabel = gt('🌱 מתחילה', '🌱 מתחיל');
+  else if (rankScore < 15) rankLabel = gt('🌿 מתרגלת', '🌿 מתרגל');
+  else if (rankScore < 35) rankLabel = gt('🌳 מתקדמת', '🌳 מתקדם');
+  else                     rankLabel = gt('🦋 אמנית', '🦋 אמן');
+
+  // Next lesson from Firebase bookings
+  let nextLesson = gt('טרם נקבע שיעור', 'טרם נקבע שיעור');
   try {
-    const classes = JSON.parse(localStorage.getItem('yo-classes') || '[]');
+    const bookingsObj = stats?.bookings || {};
     const now = new Date().toISOString().slice(0, 16);
-    const upcoming = classes
-      .filter(c => (c.date + 'T' + c.time) >= now)
+    const upcoming = Object.values(bookingsObj)
+      .filter(b => b.date && b.time && (b.date + 'T' + b.time) >= now)
       .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
     if (upcoming.length) {
       const n = upcoming[0];
@@ -4403,22 +4768,28 @@ function Profile() {
         </div>
         <div className="profile-display-name">{displayName}</div>
         <div className="profile-email-pill">{user.email}</div>
+        {stats?.admin && (
+          <button
+            className="admin-badge-btn"
+            onClick={() => window.dispatchEvent(new CustomEvent('yo-switch-mode', { detail: 'instructor' }))}
+          >⚙️ ממשק ניהול</button>
+        )}
       </div>
 
       <div className="profile-stats-strip">
         <div className="pss-item">
           <div className="pss-num">{sessions}</div>
-          <div className="pss-lbl">כניסות לתרגול</div>
+          <div className="pss-lbl">כניסות לאפליקציה</div>
+        </div>
+        <div className="pss-sep"/>
+        <div className="pss-item">
+          <div className="pss-num">{bookingsCount}</div>
+          <div className="pss-lbl">שיעורים שנרשמתי</div>
         </div>
         <div className="pss-sep"/>
         <div className="pss-item">
           <div className="pss-num">{totalStr}</div>
           <div className="pss-lbl">זמן אימון כולל</div>
-        </div>
-        <div className="pss-sep"/>
-        <div className="pss-item">
-          <div className="pss-num">{streak}🔥</div>
-          <div className="pss-lbl">ימים ברצף</div>
         </div>
       </div>
 
@@ -4426,7 +4797,7 @@ function Profile() {
         <div className="pic-card highlight">
           <div className="pic-icon"><IconCal size={18}/></div>
           <div>
-            <div className="pic-label">השיעור הבא שלך</div>
+            <div className="pic-label">{gt('השיעור הבא שלך', 'השיעור הבא שלך')}</div>
             <div className="pic-val">{nextLesson}</div>
           </div>
         </div>
@@ -4440,11 +4811,11 @@ function Profile() {
         <div className="pic-card">
           <div className="pic-icon"><IconMedi size={18}/></div>
           <div>
-            <div className="pic-label">המלצה לתרגול היום</div>
+            <div className="pic-label">{gt('המלצה לתרגול היום', 'המלצה לתרגול היום')}</div>
             <div className="pic-val">
-              {sessions < 3 ? 'תנוחת ההר · נשימה ומיקוד' :
-               sessions < 7 ? 'וויניאסה זרימה · 30 דקות' :
-               'מדיטציה מתקדמת · 20 דקות'}
+              {rankScore < 5  ? gt('תנוחת ההר · נשימה ומיקוד', 'תנוחת ההר · נשימה ומיקוד') :
+               rankScore < 15 ? 'וויניאסה זרימה · 30 דקות' :
+               gt('מדיטציה מתקדמת · 20 דקות', 'מדיטציה מתקדמת · 20 דקות')}
             </div>
           </div>
         </div>
@@ -4452,9 +4823,7 @@ function Profile() {
           <div className="pic-icon"><IconLeaf size={18}/></div>
           <div>
             <div className="pic-label">רמת תרגול</div>
-            <div className="pic-val">
-              {sessions < 5 ? '🌱 מתחילה' : sessions < 15 ? '🌿 מתרגלת' : '🌳 מתקדמת'}
-            </div>
+            <div className="pic-val">{rankLabel}</div>
           </div>
         </div>
       </div>
