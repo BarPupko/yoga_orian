@@ -11,7 +11,9 @@
       "Bash(cp \"C:/Users/hilto/.claude/projects/c--Projects-yoga-orian/45a3d472-cbf6-4a4e-b2e8-e286e422fcff/tool-results/design_content.txt\" /tmp/design_content.tar)",
       "Bash(tar -xf /tmp/design_content.tar -C /tmp/yoga_design)",
       "Bash(mkdir -p c:/Projects/yoga_orian/src/screens)",
-      "Bash(cp -r /tmp/yoga_design/yoga-by-ori/project/* c:/Projects/yoga_orian/)"
+      "Bash(cp -r /tmp/yoga_design/yoga-by-ori/project/* c:/Projects/yoga_orian/)",
+      "Bash(grep -n \"^const TABS\\\\|{ id: ''home''\\\\|{ id: ''booking''\\\\|{ id: ''library''\\\\|{ id: ''meditation''\\\\|{ id: ''profile''\" c:/Projects/yoga_orian/app.html)",
+      "Bash(grep -n \"{ id: ''overview''\\\\|{ id: ''classes''\\\\|{ id: ''add''\\\\|{ id: ''students''\" c:/Projects/yoga_orian/app.html)"
     ],
     "additionalDirectories": [
       "\\tmp"
