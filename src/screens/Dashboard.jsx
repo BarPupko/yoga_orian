@@ -96,7 +96,7 @@ function Dashboard({ onExit }) {
   const totalCapacity = classes.reduce((s, c) => s + c.capacity, 0);
   const occupancy = totalCapacity ? Math.round((totalSignups / totalCapacity) * 100) : 0;
   const weeklyRevenue = classes.reduce((s, c) => {
-    const price = c.type === 'שיעור פרטי' ? 260 : 90;
+    const price = c.type === 'שיעור פרטי' ? 150 : 45;
     return s + c.attendees.length * price;
   }, 0);
 
