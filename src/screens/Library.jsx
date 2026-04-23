@@ -22,7 +22,7 @@ function Library() {
       </div>
 
       <div className="library">
-        <h1>אסנות <span style={{ fontFamily: 'var(--font-sanskrit)', fontStyle: 'italic', color: 'var(--accent-deep)', fontSize: '0.8em' }}>Āsana</span></h1>
+        <h1>אסנות <span style={{ color: 'var(--accent)', fontSize: '0.75em', fontWeight: 500 }}>Āsana</span></h1>
         <div className="sub">לחצי על תנוחה להאזין להגייה בסנסקריט.</div>
 
         <div className="filters">

@@ -6,47 +6,52 @@
 <title>יוגה עם אוריאן</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
 <style>
 /* ======================================================================
    יוגה עם אוריאן — Calm, earth-toned, handpan-inspired
    ====================================================================== */
 
 :root {
-  /* Base palette — warm ivory & deep ink (stays across all themes) */
-  --ivory: #F4EEE3;
-  --ivory-2: #EBE2D2;
-  --ivory-3: #E0D4BF;
-  --ink: #2A2633;
-  --ink-soft: #45404E;
-  --ink-mute: #6E6877;
-  --paper: #FBF7EF;
-  --paper-2: #F8F2E5;
-  --hair: rgba(42, 38, 51, 0.12);
-  --hair-2: rgba(42, 38, 51, 0.06);
+  /* Base palette */
+  --ivory: #F5EEF5;
+  --ivory-2: #EDE5F0;
+  --ivory-3: #E0D4E8;
+  --ink: #1E1830;
+  --ink-soft: #3D3557;
+  --ink-mute: #7B6E9A;
+  --paper: #FDFAFF;
+  --paper-2: #F7F2FC;
+  --hair: rgba(90, 60, 130, 0.12);
+  --hair-2: rgba(90, 60, 130, 0.06);
 
-  /* Theme: EARTH (default) — terracotta + sage */
-  --accent: #B9552E;
-  --accent-2: #7A8B6B;
-  --accent-deep: #5A3A2C;
-  --accent-wash: #EFD9C4;
-  --accent-wash-2: #DFE5D4;
-  --surface-grad-1: #F5E9D7;
-  --surface-grad-2: #E8D2BA;
-  --medi-1: #2A2633;
-  --medi-2: #5A3A2C;
-  --medi-3: #B9552E;
+  /* Theme: EARTH (default) — rose + lavender */
+  --accent: #C45C8A;
+  --accent-2: #8B6BAF;
+  --accent-deep: #7A3870;
+  --accent-wash: #F5D8E8;
+  --accent-wash-2: #E8D8F5;
+  --surface-grad-1: #FBF0F7;
+  --surface-grad-2: #F0E0F5;
+  --hero-grad-a: #FFDDE9;
+  --hero-grad-b: #EDD6F7;
+  --hero-grad-c: #D0D9F8;
+  --medi-1: #1E1438;
+  --medi-2: #4A2060;
+  --medi-3: #C45C8A;
+  --cta-a: #C45C8A;
+  --cta-b: #7B46C9;
 
-  /* Typography */
+  /* Typography — Heebo only */
   --font-ui: 'Heebo', system-ui, -apple-system, sans-serif;
-  --font-display: 'Frank Ruhl Libre', 'Heebo', serif;
-  --font-sanskrit: 'EB Garamond', 'Georgia', serif;
+  --font-display: 'Heebo', system-ui, sans-serif;
+  --font-sanskrit: 'Heebo', system-ui, sans-serif;
 
   /* Shape */
-  --r-sm: 10px;
-  --r-md: 16px;
-  --r-lg: 24px;
-  --r-xl: 32px;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --r-xl: 34px;
 
   /* Motion */
   --ease-breath: cubic-bezier(0.37, 0, 0.23, 1);
@@ -56,42 +61,84 @@
 }
 
 [data-theme="ocean"] {
-  --accent: #2E6F8E;
-  --accent-2: #6A9BA8;
-  --accent-deep: #1C3F55;
-  --accent-wash: #CFE0E7;
-  --accent-wash-2: #DCE9ED;
-  --surface-grad-1: #E6EEF1;
-  --surface-grad-2: #C9DCE2;
-  --medi-1: #0F2230;
-  --medi-2: #1C3F55;
-  --medi-3: #2E6F8E;
+  --accent: #2882B8;
+  --accent-2: #5AABCC;
+  --accent-deep: #145680;
+  --accent-wash: #C8E5F7;
+  --accent-wash-2: #D5EEF8;
+  --surface-grad-1: #EAF4FB;
+  --surface-grad-2: #C9E4F5;
+  --hero-grad-a: #D0EEFF;
+  --hero-grad-b: #C8DEFF;
+  --hero-grad-c: #D8D0FF;
+  --medi-1: #08182E;
+  --medi-2: #0F3055;
+  --medi-3: #2882B8;
+  --cta-a: #2882B8;
+  --cta-b: #5B3FD4;
+  --ink: #0E1E30;
+  --ink-soft: #2A3F55;
+  --ink-mute: #5A7890;
+  --paper: #F7FBFF;
+  --paper-2: #EFF6FD;
+  --hair: rgba(20, 70, 120, 0.12);
+  --hair-2: rgba(20, 70, 120, 0.06);
+  --ivory: #E8F2FA;
+  --ivory-2: #D8EAF7;
 }
 
 [data-theme="forest"] {
-  --accent: #3E6B3A;
-  --accent-2: #8A9A5B;
-  --accent-deep: #2B4A28;
-  --accent-wash: #D6E0CD;
-  --accent-wash-2: #E2E8D5;
-  --surface-grad-1: #EAEBDB;
-  --surface-grad-2: #CFD6BB;
-  --medi-1: #1A231A;
-  --medi-2: #2B4A28;
-  --medi-3: #3E6B3A;
+  --accent: #3A8A5A;
+  --accent-2: #7AAF5A;
+  --accent-deep: #235A38;
+  --accent-wash: #C8EADA;
+  --accent-wash-2: #D8EDD0;
+  --surface-grad-1: #E8F5EE;
+  --surface-grad-2: #CCE8D8;
+  --hero-grad-a: #C8F0D8;
+  --hero-grad-b: #D8ECC0;
+  --hero-grad-c: #D0E8B8;
+  --medi-1: #0C1E10;
+  --medi-2: #1A3E25;
+  --medi-3: #3A8A5A;
+  --cta-a: #3A8A5A;
+  --cta-b: #2D6E9A;
+  --ink: #121E14;
+  --ink-soft: #28442E;
+  --ink-mute: #508860;
+  --paper: #F5FBF7;
+  --paper-2: #EAF6EE;
+  --hair: rgba(30, 80, 40, 0.12);
+  --hair-2: rgba(30, 80, 40, 0.06);
+  --ivory: #E5F5EA;
+  --ivory-2: #D5EEE0;
 }
 
 [data-theme="twilight"] {
-  --accent: #5A4A8A;
-  --accent-2: #8B6E93;
-  --accent-deep: #322957;
-  --accent-wash: #DAD1E5;
-  --accent-wash-2: #E3D8E2;
-  --surface-grad-1: #ECE3EE;
-  --surface-grad-2: #D3C3D7;
-  --medi-1: #14101E;
-  --medi-2: #322957;
-  --medi-3: #5A4A8A;
+  --accent: #7B4FD4;
+  --accent-2: #AA6FD4;
+  --accent-deep: #4D2898;
+  --accent-wash: #E0D0FF;
+  --accent-wash-2: #EDD8FF;
+  --surface-grad-1: #F0E8FF;
+  --surface-grad-2: #E0D0FF;
+  --hero-grad-a: #EDD8FF;
+  --hero-grad-b: #D8D0FF;
+  --hero-grad-c: #D8C8F8;
+  --medi-1: #100820;
+  --medi-2: #2A1060;
+  --medi-3: #7B4FD4;
+  --cta-a: #9B3FC0;
+  --cta-b: #4A28A0;
+  --ink: #180E2E;
+  --ink-soft: #38245C;
+  --ink-mute: #7860A8;
+  --paper: #FDFAFF;
+  --paper-2: #F5F0FF;
+  --hair: rgba(100, 60, 180, 0.14);
+  --hair-2: rgba(100, 60, 180, 0.07);
+  --ivory: #F0E8FF;
+  --ivory-2: #E5D8FF;
 }
 
 /* ---- Reset ---- */
@@ -100,11 +147,11 @@ html, body { margin: 0; padding: 0; }
 body {
   font-family: var(--font-ui);
   color: var(--ink);
-  background: #D9CFBE;
+  background: #DDD4EE;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01", "kern";
+  font-feature-settings: "kern";
   line-height: 1.4;
 }
 button { font-family: inherit; color: inherit; }
@@ -127,9 +174,9 @@ button, [role="button"] { cursor: pointer; }
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(1200px 800px at 20% 10%, #E8DCC5 0%, transparent 60%),
-    radial-gradient(900px 700px at 90% 90%, #D5C9B3 0%, transparent 60%),
-    #CFC2A8;
+    radial-gradient(1200px 800px at 20% 10%, #E8D5F5 0%, transparent 60%),
+    radial-gradient(900px 700px at 85% 85%, #C8D5F5 0%, transparent 60%),
+    #CEC0E0;
   z-index: -1;
 }
 
@@ -150,43 +197,43 @@ button, [role="button"] { cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 22px 10px;
+  padding: 20px 22px 10px;
 }
 .topbar .brand {
   display: flex; align-items: center; gap: 10px;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 .topbar .dot {
   width: 10px; height: 10px; border-radius: 50%;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
   box-shadow: 0 0 0 4px var(--accent-wash);
 }
 .topbar .greet {
   font-size: 12px;
   color: var(--ink-mute);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  font-weight: 500;
 }
 
 /* ---- Bottom tab bar ---- */
 .tabbar {
   position: fixed;
-  bottom: 14px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(var(--app-w) - 28px);
   max-width: calc(100vw - 28px);
-  background: rgba(251, 247, 239, 0.88);
-  backdrop-filter: blur(18px) saturate(1.1);
-  -webkit-backdrop-filter: blur(18px) saturate(1.1);
-  border: 1px solid var(--hair);
+  background: rgba(253, 250, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(180, 140, 220, 0.2);
   border-radius: 999px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 6px;
-  box-shadow: 0 20px 40px -20px rgba(42, 38, 51, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(100, 50, 160, 0.25);
   z-index: 50;
 }
 .tabbar button {
@@ -202,99 +249,102 @@ button, [role="button"] { cursor: pointer; }
   font-size: 11px;
   color: var(--ink-mute);
   transition: color .3s var(--ease-breath), background .3s var(--ease-breath);
-  font-weight: 500;
+  font-weight: 600;
 }
 .tabbar button .ti {
   width: 22px; height: 22px; display: grid; place-items: center;
 }
 .tabbar button.active {
-  background: var(--ink);
-  color: var(--paper);
+  background: linear-gradient(135deg, var(--cta-a) 0%, var(--cta-b) 100%);
+  color: #fff;
 }
-.tabbar button.active .ti svg { stroke: var(--paper); }
+.tabbar button.active .ti svg { stroke: #fff; }
 
 /* ---- HOME ---- */
 .home-hero {
   position: relative;
   margin: 6px 18px 0;
   border-radius: var(--r-xl);
-  padding: 32px 26px 30px;
+  padding: 36px 28px 34px;
   overflow: hidden;
-  background:
-    radial-gradient(120% 80% at 85% 10%, var(--accent-wash) 0%, transparent 60%),
-    linear-gradient(160deg, var(--surface-grad-1) 0%, var(--surface-grad-2) 100%);
-  border: 1px solid var(--hair);
+  background: linear-gradient(135deg,
+    var(--hero-grad-a) 0%,
+    var(--hero-grad-b) 50%,
+    var(--hero-grad-c) 100%);
+  box-shadow: 0 12px 40px -10px rgba(160, 80, 180, 0.22);
 }
 .home-hero .eyebrow {
   font-size: 11px;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent-deep);
-  opacity: 0.75;
-  margin-bottom: 14px;
-  font-weight: 500;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 .home-hero h1 {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 54px;
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
   margin: 0 0 6px;
   color: var(--ink);
 }
 .home-hero h1 .accent {
-  color: var(--accent-deep);
-  font-style: italic;
-  font-weight: 400;
+  color: var(--accent);
+  font-weight: 900;
 }
 .home-hero .tagline {
   font-size: 15px;
+  font-weight: 400;
   color: var(--ink-soft);
   max-width: 28ch;
   margin-top: 14px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 .home-hero .mantra {
-  margin-top: 22px;
+  margin-top: 20px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-sanskrit);
-  font-style: italic;
-  font-size: 14px;
-  color: var(--ink-soft);
-  padding: 6px 12px 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-deep);
+  padding: 7px 14px 7px 16px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid var(--hair);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .home-hero .orb {
   position: absolute;
-  top: -40px; left: -40px;
-  width: 180px; height: 180px;
+  top: -50px; left: -50px;
+  width: 200px; height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), transparent 60%),
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), transparent 60%),
               var(--accent);
-  opacity: 0.18;
-  filter: blur(2px);
+  opacity: 0.22;
+  filter: blur(4px);
 }
 .home-hero .orb.b {
-  top: auto; bottom: -60px; left: auto; right: -50px;
-  width: 160px; height: 160px;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), transparent 60%),
+  top: auto; bottom: -70px; left: auto; right: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), transparent 60%),
               var(--accent-2);
-  opacity: 0.28;
+  opacity: 0.3;
+  filter: blur(4px);
 }
 .home-hero .sig {
   position: absolute;
-  bottom: 22px;
-  left: 26px;
-  font-family: var(--font-sanskrit);
-  font-style: italic;
+  bottom: 24px;
+  left: 28px;
   font-size: 15px;
+  font-weight: 600;
   color: var(--accent-deep);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  opacity: 0.7;
 }
 
 /* Section title */
@@ -302,14 +352,14 @@ button, [role="button"] { cursor: pointer; }
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 28px 26px 10px;
+  padding: 26px 26px 10px;
 }
 .section-title h2 {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 20px;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 .section-title .rule {
   flex: 1;
@@ -318,7 +368,7 @@ button, [role="button"] { cursor: pointer; }
   margin: 0 14px;
   transform: translateY(-6px);
 }
-.section-title .more { font-size: 12px; color: var(--ink-mute); }
+.section-title .more { font-size: 12px; color: var(--ink-mute); font-weight: 500; }
 
 /* Quick nav cards */
 .quick-grid {
@@ -329,114 +379,125 @@ button, [role="button"] { cursor: pointer; }
 }
 .quick {
   position: relative;
-  background: var(--paper-2);
-  border: 1px solid var(--hair);
+  background: var(--paper);
+  border: none;
   border-radius: var(--r-lg);
-  padding: 18px 18px 20px;
-  min-height: 128px;
-  transition: transform .35s var(--ease-breath), background .3s;
+  padding: 20px 18px 22px;
+  min-height: 130px;
+  transition: transform .35s var(--ease-breath), box-shadow .3s;
   text-align: start;
   overflow: hidden;
+  box-shadow: 0 4px 20px -6px rgba(120, 60, 180, 0.14);
 }
-.quick:hover { transform: translateY(-2px); }
+.quick:hover { transform: translateY(-3px); box-shadow: 0 8px 28px -6px rgba(120, 60, 180, 0.22); }
 .quick .qi {
-  width: 36px; height: 36px;
-  border-radius: 50%;
+  width: 40px; height: 40px;
+  border-radius: 14px;
   background: var(--accent-wash);
   display: grid; place-items: center;
-  color: var(--accent-deep);
+  color: var(--accent);
   margin-bottom: 14px;
 }
 .quick .qt {
   font-family: var(--font-display);
-  font-size: 18px;
-  letter-spacing: -0.01em;
-  margin: 0 0 4px;
-  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  margin: 0 0 5px;
+  font-weight: 700;
 }
 .quick .qs {
   font-size: 12px;
   color: var(--ink-mute);
-  line-height: 1.4;
+  line-height: 1.45;
+  font-weight: 400;
 }
 .quick.feature {
   grid-column: 1 / -1;
-  background: var(--ink);
-  color: var(--paper);
+  background: linear-gradient(130deg, var(--cta-a) 0%, var(--cta-b) 100%);
+  color: #fff;
   border: 0;
   min-height: 140px;
+  box-shadow: 0 10px 30px -8px rgba(140, 50, 180, 0.45);
 }
 .quick.feature .qi {
-  background: rgba(255,255,255,0.1);
-  color: var(--paper);
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border-radius: 14px;
 }
-.quick.feature .qs { color: rgba(255,255,255,0.7); }
+.quick.feature .qt { color: #fff; }
+.quick.feature .qs { color: rgba(255,255,255,0.75); }
 .quick.feature .deco {
   position: absolute;
   inset: auto -30px -30px auto;
   width: 140px; height: 140px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.18);
 }
 .quick.feature .deco.b {
   inset: auto -60px -60px auto;
   width: 200px; height: 200px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.09);
 }
 
 /* Today's practice strip */
 .today-card {
-  margin: 14px 18px 0;
-  background: var(--paper-2);
-  border: 1px solid var(--hair);
+  margin: 12px 18px 0;
+  background: var(--paper);
+  border: none;
   border-radius: var(--r-lg);
   padding: 18px 20px;
   display: flex;
   align-items: center;
   gap: 14px;
+  box-shadow: 0 4px 20px -6px rgba(120, 60, 180, 0.14);
 }
 .today-card .tnum {
   font-family: var(--font-display);
-  font-size: 38px;
+  font-size: 44px;
+  font-weight: 900;
   line-height: 1;
-  color: var(--accent-deep);
+  color: var(--accent);
+  letter-spacing: -0.03em;
 }
 .today-card .tcol { flex: 1; }
 .today-card .tlabel {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-mute);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  font-weight: 600;
 }
 .today-card .tname {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 .today-card .tmeta {
   font-size: 12px;
   color: var(--ink-mute);
   margin-top: 2px;
+  font-weight: 400;
 }
 .today-card .tgo {
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border-radius: 50%;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--cta-a) 0%, var(--cta-b) 100%);
   color: #fff;
   border: 0;
   display: grid; place-items: center;
-  transition: transform .3s var(--ease-breath);
+  transition: transform .3s var(--ease-breath), box-shadow .3s;
+  box-shadow: 0 6px 16px -4px rgba(140, 50, 180, 0.5);
 }
-.today-card .tgo:hover { transform: scale(1.05); }
+.today-card .tgo:hover { transform: scale(1.08); }
 
 /* ---- BOOKING ---- */
 .booking { padding: 4px 18px 0; }
 .booking h1 {
   font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin: 6px 0 2px;
   padding: 0 8px;
 }
@@ -569,9 +630,10 @@ button, [role="button"] { cursor: pointer; }
 }
 .slot:hover:not(:disabled) { border-color: var(--accent); }
 .slot.on {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
   color: #fff;
-  border-color: var(--accent);
+  border-color: transparent;
+  box-shadow: 0 6px 16px -4px rgba(140, 50, 180, 0.4);
 }
 .slot:disabled {
   opacity: 0.35;
@@ -603,17 +665,18 @@ button, [role="button"] { cursor: pointer; }
   margin: 6px 8px 0;
   appearance: none;
   border: 0;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 17px;
+  background: linear-gradient(130deg, var(--cta-a) 0%, var(--cta-b) 100%);
+  color: #fff;
+  padding: 18px;
   border-radius: 999px;
   font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: background .3s, transform .3s;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: opacity .3s, transform .3s, box-shadow .3s;
+  box-shadow: 0 8px 24px -6px rgba(140, 50, 180, 0.45);
 }
-.cta:hover { background: var(--accent-deep); }
-.cta:disabled { opacity: 0.35; }
+.cta:hover { opacity: 0.9; transform: translateY(-1px); }
+.cta:disabled { opacity: 0.35; box-shadow: none; }
 
 /* Confirmation modal */
 .confirm-veil {
@@ -660,9 +723,9 @@ button, [role="button"] { cursor: pointer; }
   100% { transform: scale(1.15); opacity: 0; }
 }
 .confirm h3 {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin: 0 0 6px;
 }
 .confirm p {
@@ -684,11 +747,13 @@ button, [role="button"] { cursor: pointer; }
   width: 100%;
   appearance: none;
   border: 0;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 14px;
+  background: linear-gradient(130deg, var(--cta-a) 0%, var(--cta-b) 100%);
+  color: #fff;
+  padding: 15px;
   border-radius: 999px;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 20px -6px rgba(140, 50, 180, 0.4);
 }
 
 /* ---- LIBRARY ---- */
@@ -696,8 +761,8 @@ button, [role="button"] { cursor: pointer; }
 .library h1 {
   font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin: 6px 0 2px;
   padding: 0 8px;
 }
@@ -740,22 +805,22 @@ button, [role="button"] { cursor: pointer; }
 }
 .pose {
   appearance: none;
-  border: 1px solid var(--hair);
-  background: var(--paper-2);
+  border: none;
+  background: var(--paper);
   border-radius: var(--r-lg);
   padding: 16px 14px 16px;
   text-align: start;
   transition: all .3s var(--ease-breath);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 16px -6px rgba(120, 60, 180, 0.12);
 }
-.pose:hover { transform: translateY(-2px); border-color: var(--accent); }
+.pose:hover { transform: translateY(-3px); box-shadow: 0 8px 24px -6px rgba(120, 60, 180, 0.22); }
 .pose .pose-art {
-  height: 110px;
-  margin: -4px -4px 10px;
+  height: 115px;
+  margin: -4px -4px 12px;
   border-radius: 14px;
-  background:
-    linear-gradient(160deg, var(--accent-wash) 0%, var(--accent-wash-2) 100%);
+  background: linear-gradient(140deg, var(--hero-grad-a) 0%, var(--hero-grad-b) 60%, var(--hero-grad-c) 100%);
   display: grid; place-items: center;
   position: relative;
   overflow: hidden;
@@ -764,18 +829,17 @@ button, [role="button"] { cursor: pointer; }
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 100%, rgba(255,255,255,0.4), transparent 50%);
+  background: radial-gradient(circle at 20% 100%, rgba(255,255,255,0.45), transparent 50%);
 }
-.pose .ph { font-family: var(--font-display); font-size: 17px; font-weight: 500; line-height: 1.15; }
+.pose .ph { font-size: 16px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
 .pose .ps {
-  font-family: var(--font-sanskrit);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--accent-deep);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
   margin-top: 3px;
-  letter-spacing: 0.02em;
   direction: ltr;
   text-align: start;
+  opacity: 0.8;
 }
 .pose .pmeta {
   display: flex;
@@ -784,14 +848,16 @@ button, [role="button"] { cursor: pointer; }
   margin-top: 10px;
   font-size: 11px;
   color: var(--ink-mute);
+  font-weight: 500;
 }
 .pose .play-badge {
-  width: 26px; height: 26px;
+  width: 28px; height: 28px;
   border-radius: 50%;
-  background: var(--ink);
-  color: var(--paper);
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
+  color: #fff;
   display: grid; place-items: center;
   transition: all .25s;
+  box-shadow: 0 4px 10px -3px rgba(140, 50, 180, 0.4);
 }
 .pose.speaking .play-badge {
   background: var(--accent);
@@ -896,18 +962,17 @@ button, [role="button"] { cursor: pointer; }
   margin-bottom: 6px;
 }
 .medi-head h1 {
-  font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 800;
   margin: 0 0 4px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 }
 .medi-head p {
-  font-family: var(--font-sanskrit);
-  font-style: italic;
   color: rgba(255,255,255,0.6);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
   margin: 0;
+  letter-spacing: 0.05em;
 }
 
 .breath-wrap {
@@ -975,13 +1040,12 @@ button, [role="button"] { cursor: pointer; }
 
 .time-display {
   text-align: center;
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 300;
-  margin-top: 20px;
-  letter-spacing: 0.02em;
+  font-size: 56px;
+  font-weight: 800;
+  margin-top: 18px;
+  letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
-  color: rgba(255,255,255,0.95);
+  color: rgba(255,255,255,0.97);
 }
 
 .durations {
@@ -1164,12 +1228,13 @@ button, [role="button"] { cursor: pointer; }
   align-items: center;
   justify-content: space-between;
   padding: 22px 22px 18px;
-  background: var(--ink);
-  color: var(--paper);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  background: linear-gradient(130deg, var(--cta-a) 0%, var(--cta-b) 100%);
+  color: #fff;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 12px 30px -8px rgba(140, 50, 180, 0.4);
 }
 .dash-top::before {
   content: "";
@@ -1887,10 +1952,212 @@ button, [role="button"] { cursor: pointer; }
   font-weight: 500;
 }
 
+/* ======================================================================
+   Profile / Auth screen
+   ====================================================================== */
+
+/* Tab bar — 5 columns now */
+.tabbar { grid-template-columns: repeat(5, 1fr); }
+.tabbar button { font-size: 10px; padding: 8px 2px 7px; gap: 2px; }
+
+/* Tab profile avatar icon */
+.tab-profile-avatar {
+  width: 22px; height: 22px; border-radius: 50%; overflow: hidden;
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: #fff;
+  flex-shrink: 0;
+}
+.tab-profile-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tabbar button.active .tab-profile-avatar { box-shadow: 0 0 0 2px rgba(255,255,255,0.5); }
+
+/* Profile screen loading spinner */
+.profile-loading {
+  display: flex; align-items: center; justify-content: center; min-height: 60vh;
+}
+.pload-orb {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 3px solid var(--accent-wash); border-top-color: var(--accent);
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Auth wrapper */
+.auth-wrap {
+  padding: 8px 24px 48px;
+  display: flex; flex-direction: column; align-items: center;
+}
+.auth-avatar-guest {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--hero-grad-a), var(--hero-grad-b));
+  display: grid; place-items: center; color: var(--accent);
+  margin-bottom: 20px;
+  box-shadow: 0 14px 40px -10px rgba(140, 50, 180, 0.22);
+}
+.auth-title {
+  font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+  text-align: center; margin-bottom: 8px; color: var(--ink);
+}
+.auth-sub {
+  font-size: 13px; color: var(--ink-mute); text-align: center;
+  max-width: 26ch; line-height: 1.55; margin-bottom: 28px; font-weight: 400;
+}
+
+/* Google button */
+.google-signin-btn {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  gap: 10px; padding: 14px 20px; border-radius: 999px;
+  border: 1.5px solid var(--hair); background: var(--paper);
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  box-shadow: 0 3px 12px -4px rgba(0,0,0,0.1);
+  transition: all .25s; cursor: pointer; font-family: var(--font-ui);
+}
+.google-signin-btn:hover { background: var(--paper-2); transform: translateY(-1px); }
+.google-signin-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.auth-or {
+  display: flex; align-items: center; width: 100%;
+  gap: 12px; margin: 18px 0; font-size: 12px; color: var(--ink-mute); font-weight: 500;
+}
+.auth-or::before, .auth-or::after {
+  content: ''; flex: 1; height: 1px; background: var(--hair);
+}
+
+/* Auth form */
+.auth-form { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.auth-field {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--paper-2); border: 1.5px solid var(--hair);
+  border-radius: 14px; padding: 0 14px; transition: border-color .25s;
+}
+.auth-field:focus-within { border-color: var(--accent); background: var(--paper); }
+.auth-field-icon {
+  color: var(--ink-mute); display: flex; align-items: center;
+  font-size: 13px; flex-shrink: 0; font-weight: 600;
+}
+.auth-field input {
+  flex: 1; border: 0; background: transparent;
+  padding: 14px 0; font-size: 14px; font-weight: 500;
+  outline: none; color: var(--ink); font-family: var(--font-ui);
+}
+.auth-field input::placeholder { color: var(--ink-mute); }
+.auth-error {
+  background: #FFF0F3; border: 1px solid #FFBDCA;
+  border-radius: 12px; padding: 10px 14px; font-size: 13px;
+  color: #B02040; font-weight: 500; direction: rtl; text-align: center;
+}
+.auth-submit {
+  width: 100%; padding: 16px; border-radius: 999px; border: 0;
+  background: linear-gradient(130deg, var(--cta-a) 0%, var(--cta-b) 100%);
+  color: #fff; font-size: 15px; font-weight: 700; margin-top: 6px;
+  box-shadow: 0 8px 24px -6px rgba(140, 50, 180, 0.45);
+  transition: opacity .25s, transform .25s; cursor: pointer; font-family: var(--font-ui);
+}
+.auth-submit:hover:not(:disabled) { opacity: 0.92; transform: translateY(-1px); }
+.auth-submit:disabled { opacity: 0.45; box-shadow: none; cursor: not-allowed; }
+.auth-mode-toggle {
+  appearance: none; background: none; border: none;
+  color: var(--accent); font-size: 13px; font-weight: 600;
+  margin-top: 16px; padding: 6px; cursor: pointer; font-family: var(--font-ui);
+}
+
+/* Logged-in profile */
+.profile-hero-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 10px 24px 26px;
+}
+.profile-avatar-large {
+  width: 100px; height: 100px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cta-a), var(--cta-b));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; font-weight: 900; color: #fff;
+  margin-bottom: 14px; overflow: hidden;
+  box-shadow: 0 16px 44px -10px rgba(140, 50, 180, 0.42);
+  border: 4px solid rgba(255,255,255,0.9);
+  letter-spacing: -0.03em;
+}
+.profile-avatar-large img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.profile-display-name { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+.profile-email-pill {
+  font-size: 12px; color: var(--ink-mute); background: var(--paper-2);
+  border: 1px solid var(--hair); border-radius: 999px;
+  padding: 5px 14px; font-weight: 500;
+}
+
+/* Stats strip */
+.profile-stats-strip {
+  margin: 0 18px 18px;
+  background: var(--paper);
+  border-radius: var(--r-lg);
+  padding: 20px 8px;
+  display: flex; align-items: center;
+  box-shadow: 0 4px 20px -6px rgba(120, 60, 180, 0.14);
+}
+.pss-item { flex: 1; text-align: center; }
+.pss-num {
+  font-size: 30px; font-weight: 900; letter-spacing: -0.04em;
+  color: var(--accent); line-height: 1;
+}
+.pss-lbl { font-size: 11px; color: var(--ink-mute); font-weight: 500; margin-top: 5px; }
+.pss-sep { width: 1px; height: 38px; background: var(--hair); }
+
+/* Info cards */
+.profile-info-cards { padding: 0 18px 40px; display: flex; flex-direction: column; gap: 10px; }
+.pic-card {
+  background: var(--paper); border-radius: var(--r-md);
+  padding: 16px 18px; display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 4px 16px -6px rgba(120, 60, 180, 0.10);
+  transition: transform .3s var(--ease-breath);
+}
+.pic-card:hover { transform: translateY(-2px); }
+.pic-card.highlight {
+  background: linear-gradient(135deg, var(--hero-grad-a) 0%, var(--hero-grad-b) 100%);
+}
+.pic-icon {
+  width: 42px; height: 42px; border-radius: 13px;
+  background: var(--accent-wash); display: grid; place-items: center;
+  color: var(--accent); flex-shrink: 0;
+}
+.pic-card.highlight .pic-icon { background: rgba(255,255,255,0.55); }
+.pic-label {
+  font-size: 10px; color: var(--ink-mute); font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;
+}
+.pic-card.highlight .pic-label { color: var(--accent-deep); }
+.pic-val { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+
+/* Sign out pill */
+.signout-pill {
+  appearance: none; background: var(--ivory-2); border: none;
+  color: var(--ink-mute); font-size: 12px; font-weight: 600;
+  padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  transition: all .25s; font-family: var(--font-ui);
+}
+.signout-pill:hover { background: var(--ivory-3); color: var(--ink); }
+
 </style>
 </head>
 <body>
   <div id="root"></div>
+
+  <!-- Firebase compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics-compat.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey: "AIzaSyDnLGndwRMYAPybcQ8M_vGP9vJe0fHwcp8",
+      authDomain: "yoga-orian.firebaseapp.com",
+      databaseURL: "https://yoga-orian-default-rtdb.firebaseio.com",
+      projectId: "yoga-orian",
+      storageBucket: "yoga-orian.firebasestorage.app",
+      messagingSenderId: "76048868862",
+      appId: "1:76048868862:web:44f4fbcf96b480b3148caf",
+      measurementId: "G-M2F1VK9KLM"
+    });
+    try { firebase.analytics(); } catch(e) {}
+  </script>
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -2724,7 +2991,7 @@ function Library() {
       </div>
 
       <div className="library">
-        <h1>אסנות <span style={{ fontFamily: 'var(--font-sanskrit)', fontStyle: 'italic', color: 'var(--accent-deep)', fontSize: '0.8em' }}>Āsana</span></h1>
+        <h1>אסנות <span style={{ color: 'var(--accent)', fontSize: '0.75em', fontWeight: 500 }}>Āsana</span></h1>
         <div className="sub">לחצי על תנוחה להאזין להגייה בסנסקריט.</div>
 
         <div className="filters">
@@ -3567,6 +3834,7 @@ const TABS = [
   { id: 'booking',    name: 'קביעת תור', Icon: IconCal  },
   { id: 'library',    name: 'תנוחות',    Icon: IconLib  },
   { id: 'meditation', name: 'מדיטציה',   Icon: IconMedi },
+  { id: 'profile',    name: 'פרופיל',    Icon: ProfileTabIcon },
 ];
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -3654,11 +3922,14 @@ function App() {
         <div style={{ display: tab === 'meditation' ? 'contents' : 'none' }}>
           <Meditation />
         </div>
+        <div style={{ display: tab === 'profile' ? 'contents' : 'none' }}>
+          <Profile />
+        </div>
 
         <nav className="tabbar" aria-label="ניווט ראשי">
           {TABS.map(({ id, name, Icon }) => (
             <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}>
-              <span className="ti"><Icon size={18} /></span>
+              <span className="ti"><Icon size={18} active={tab === id} /></span>
               <span>{name}</span>
             </button>
           ))}
@@ -3685,6 +3956,363 @@ function HeroNameBridge({ value }) {
   }, [value]);
   return null;
 }
+
+// ── Firebase Auth helper: translate error codes to Hebrew ─────────────
+function hebrewAuthError(code) {
+  const map = {
+    'auth/email-already-in-use':   'האימייל הזה כבר רשום במערכת',
+    'auth/invalid-email':          'כתובת אימייל לא תקינה',
+    'auth/weak-password':          'הסיסמה חלשה — לפחות 6 תווים',
+    'auth/user-not-found':         'לא נמצא חשבון עם אימייל זה',
+    'auth/wrong-password':         'הסיסמה שגויה',
+    'auth/invalid-credential':     'פרטי הכניסה שגויים — בדקי שוב',
+    'auth/too-many-requests':      'יותר מדי ניסיונות — נסי שוב מאוחר יותר',
+    'auth/popup-closed-by-user':   'חלון הכניסה נסגר',
+    'auth/cancelled-popup-request':'',
+    'auth/network-request-failed': 'בעיית רשת — בדקי חיבור לאינטרנט',
+  };
+  return map[code] || 'שגיאה: ' + (code || 'לא ידועה');
+}
+
+// ── Google SVG logo ────────────────────────────────────────────────────
+function GoogleSVG() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908C16.658 14.013 17.64 11.705 17.64 9.2z" fill="#4285F4"/>
+      <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
+      <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+      <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+    </svg>
+  );
+}
+
+// ── Extra icons needed by Profile ─────────────────────────────────────
+const IconLock = (p) => (
+  <Icon {...p}>
+    <rect x="5" y="11" width="14" height="10" rx="2" transform="translate(-2 0)"/>
+    <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+  </Icon>
+);
+
+// ── Profile tab avatar (shows user photo/initial when logged in) ───────
+function ProfileTabIcon({ size = 18, active }) {
+  const [photoURL, setPhotoURL] = React.useState(null);
+  const [initial, setInitial] = React.useState(null);
+
+  React.useEffect(() => {
+    try {
+      return firebase.auth().onAuthStateChanged(u => {
+        setPhotoURL(u?.photoURL || null);
+        const n = u?.displayName || u?.email || '';
+        setInitial(n ? n.charAt(0).toUpperCase() : null);
+      });
+    } catch { return undefined; }
+  }, []);
+
+  if (photoURL) {
+    return (
+      <span className="tab-profile-avatar">
+        <img src={photoURL} referrerPolicy="no-referrer" alt="" />
+      </span>
+    );
+  }
+  if (initial) {
+    return <span className="tab-profile-avatar">{initial}</span>;
+  }
+  return <IconUser size={size} />;
+}
+
+// ── Profile screen ─────────────────────────────────────────────────────
+function Profile() {
+  const [user, setUser] = React.useState(undefined); // undefined = auth loading
+  const [mode, setMode] = React.useState('login');   // 'login' | 'register'
+  const [form, setForm] = React.useState({ name: '', email: '', password: '' });
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState('');
+  const [stats, setStats] = React.useState(null);
+  const dbRef = React.useRef(null);
+
+  // Auth state listener
+  React.useEffect(() => {
+    let unsub;
+    try {
+      unsub = firebase.auth().onAuthStateChanged(async u => {
+        setUser(u || null);
+        if (u) {
+          recordSession(u);
+          listenStats(u.uid);
+        } else {
+          if (dbRef.current) { dbRef.current.off(); dbRef.current = null; }
+          setStats(null);
+        }
+      });
+    } catch (e) { setUser(null); }
+    return () => {
+      if (unsub) unsub();
+      if (dbRef.current) { dbRef.current.off(); dbRef.current = null; }
+    };
+  }, []);
+
+  function listenStats(uid) {
+    if (dbRef.current) dbRef.current.off();
+    const ref = firebase.database().ref('users/' + uid);
+    dbRef.current = ref;
+    ref.on('value', snap => setStats(snap.val()));
+  }
+
+  function recordSession(u) {
+    try {
+      firebase.database().ref('users/' + u.uid).transaction(data => {
+        const d = data || {};
+        const today = new Date().toISOString().slice(0, 10);
+        const lastDay = (d.lastVisit || '').slice(0, 10);
+        return {
+          ...d,
+          name: d.name || u.displayName || u.email || 'מתרגלת',
+          email: u.email || d.email || '',
+          photoURL: u.photoURL || d.photoURL || null,
+          sessions: today !== lastDay ? (d.sessions || 0) + 1 : (d.sessions || 1),
+          lastVisit: new Date().toISOString(),
+        };
+      });
+    } catch (e) {}
+  }
+
+  const setF = (k, v) => setForm(f => ({...f, [k]: v}));
+
+  async function doRegister(e) {
+    e.preventDefault();
+    if (!form.name.trim()) { setError('אנא הכניסי שם מלא'); return; }
+    setLoading(true); setError('');
+    try {
+      const cred = await firebase.auth().createUserWithEmailAndPassword(form.email, form.password);
+      await cred.user.updateProfile({ displayName: form.name.trim() });
+      // Write name immediately so DB has it
+      await firebase.database().ref('users/' + cred.user.uid).update({ name: form.name.trim() });
+    } catch (err) {
+      setError(hebrewAuthError(err.code));
+    } finally { setLoading(false); }
+  }
+
+  async function doLogin(e) {
+    e.preventDefault();
+    setLoading(true); setError('');
+    try {
+      await firebase.auth().signInWithEmailAndPassword(form.email, form.password);
+    } catch (err) {
+      setError(hebrewAuthError(err.code));
+    } finally { setLoading(false); }
+  }
+
+  async function doGoogle() {
+    setLoading(true); setError('');
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      await firebase.auth().signInWithPopup(provider);
+    } catch (err) {
+      if (err.code !== 'auth/cancelled-popup-request') setError(hebrewAuthError(err.code));
+    } finally { setLoading(false); }
+  }
+
+  async function doSignOut() {
+    if (dbRef.current) { dbRef.current.off(); dbRef.current = null; }
+    await firebase.auth().signOut();
+    setStats(null); setForm({ name: '', email: '', password: '' }); setError('');
+  }
+
+  // ── Loading state ──
+  if (user === undefined) {
+    return (
+      <div className="screen">
+        <div className="topbar">
+          <div className="brand"><span className="dot"/><span>פרופיל</span></div>
+        </div>
+        <div className="profile-loading"><div className="pload-orb"/></div>
+      </div>
+    );
+  }
+
+  // ── Not logged in ──
+  if (!user) {
+    return (
+      <div className="screen">
+        <div className="topbar">
+          <div className="brand"><span className="dot"/><span>פרופיל</span></div>
+        </div>
+        <div className="auth-wrap">
+          <div className="auth-avatar-guest">
+            <IconUser size={42} />
+          </div>
+          <div className="auth-title">
+            {mode === 'login' ? 'ברוכה הבאה חזרה ✨' : 'הצטרפי אלינו 🌸'}
+          </div>
+          <div className="auth-sub">
+            {mode === 'login'
+              ? 'היכנסי כדי לראות את ההתקדמות, השיעורים הקרובים וזמן האימון שלך'
+              : 'צרי חשבון ועקבי אחרי המסע שלך ביוגה עם אוריאן'}
+          </div>
+
+          <button className="google-signin-btn" onClick={doGoogle} disabled={loading}>
+            <GoogleSVG />
+            <span>המשיכי עם Google</span>
+          </button>
+
+          <div className="auth-or"><span>או</span></div>
+
+          <form className="auth-form" onSubmit={mode === 'login' ? doLogin : doRegister}>
+            {mode === 'register' && (
+              <div className="auth-field">
+                <span className="auth-field-icon"><IconUser size={15}/></span>
+                <input
+                  placeholder="שם מלא"
+                  value={form.name}
+                  onChange={e => setF('name', e.target.value)}
+                  autoComplete="name"
+                  required
+                />
+              </div>
+            )}
+            <div className="auth-field">
+              <span className="auth-field-icon" style={{fontFamily:'monospace'}}>@</span>
+              <input
+                type="email" placeholder="כתובת אימייל"
+                value={form.email} onChange={e => setF('email', e.target.value)}
+                autoComplete="email" required
+              />
+            </div>
+            <div className="auth-field">
+              <span className="auth-field-icon"><IconLock size={15}/></span>
+              <input
+                type="password" placeholder="סיסמה · לפחות 6 תווים"
+                value={form.password} onChange={e => setF('password', e.target.value)}
+                autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+                required minLength={6}
+              />
+            </div>
+            {error && <div className="auth-error">{error}</div>}
+            <button type="submit" className="auth-submit" disabled={loading}>
+              {loading ? '⏳ רגע...' : mode === 'login' ? 'כניסה' : 'יצירת חשבון'}
+            </button>
+          </form>
+
+          <button className="auth-mode-toggle" onClick={() => { setMode(m => m === 'login' ? 'register' : 'login'); setError(''); }}>
+            {mode === 'login' ? 'אין לך חשבון עדיין? הצטרפי ←' : 'יש לך חשבון? כניסה ←'}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Logged in ──
+  const displayName = user.displayName || stats?.name || user.email?.split('@')[0] || 'מתרגלת';
+  const initial = displayName.charAt(0).toUpperCase();
+  const sessions = stats?.sessions || 1;
+  const totalMin = sessions * 45;
+  const totalStr = totalMin >= 60
+    ? `${Math.floor(totalMin/60)}ש׳ ${totalMin%60 > 0 ? totalMin%60 + 'ד׳' : ''}`
+    : `${totalMin}ד׳`;
+  const streak = Math.min(sessions, 7);
+
+  const lastVisit = stats?.lastVisit
+    ? new Date(stats.lastVisit).toLocaleDateString('he-IL', {
+        weekday: 'long', day: 'numeric', month: 'long',
+        hour: '2-digit', minute: '2-digit',
+      })
+    : '—';
+
+  // Next lesson: look for earliest upcoming booking in localStorage
+  let nextLesson = 'זרימת בוקר רכה · 25 דקות';
+  try {
+    const classes = JSON.parse(localStorage.getItem('yo-classes') || '[]');
+    const now = new Date().toISOString().slice(0, 16);
+    const upcoming = classes
+      .filter(c => (c.date + 'T' + c.time) >= now)
+      .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+    if (upcoming.length) {
+      const n = upcoming[0];
+      const d = new Date(n.date + 'T' + n.time);
+      const dStr = d.toLocaleDateString('he-IL', { weekday: 'short', day: 'numeric', month: 'long' });
+      nextLesson = `${n.type} · ${dStr} ${n.time}`;
+    }
+  } catch {}
+
+  return (
+    <div className="screen">
+      <div className="topbar">
+        <div className="brand"><span className="dot"/><span>הפרופיל שלי</span></div>
+        <button className="signout-pill" onClick={doSignOut}>יציאה</button>
+      </div>
+
+      <div className="profile-hero-wrap">
+        <div className="profile-avatar-large">
+          {user.photoURL
+            ? <img src={user.photoURL} alt={displayName} referrerPolicy="no-referrer"/>
+            : <span>{initial}</span>
+          }
+        </div>
+        <div className="profile-display-name">{displayName}</div>
+        <div className="profile-email-pill">{user.email}</div>
+      </div>
+
+      <div className="profile-stats-strip">
+        <div className="pss-item">
+          <div className="pss-num">{sessions}</div>
+          <div className="pss-lbl">כניסות לתרגול</div>
+        </div>
+        <div className="pss-sep"/>
+        <div className="pss-item">
+          <div className="pss-num">{totalStr}</div>
+          <div className="pss-lbl">זמן אימון כולל</div>
+        </div>
+        <div className="pss-sep"/>
+        <div className="pss-item">
+          <div className="pss-num">{streak}🔥</div>
+          <div className="pss-lbl">ימים ברצף</div>
+        </div>
+      </div>
+
+      <div className="profile-info-cards">
+        <div className="pic-card highlight">
+          <div className="pic-icon"><IconCal size={18}/></div>
+          <div>
+            <div className="pic-label">השיעור הבא שלך</div>
+            <div className="pic-val">{nextLesson}</div>
+          </div>
+        </div>
+        <div className="pic-card">
+          <div className="pic-icon"><IconClock size={18}/></div>
+          <div>
+            <div className="pic-label">כניסה אחרונה</div>
+            <div className="pic-val">{lastVisit}</div>
+          </div>
+        </div>
+        <div className="pic-card">
+          <div className="pic-icon"><IconMedi size={18}/></div>
+          <div>
+            <div className="pic-label">המלצה לתרגול היום</div>
+            <div className="pic-val">
+              {sessions < 3 ? 'תנוחת ההר · נשימה ומיקוד' :
+               sessions < 7 ? 'וויניאסה זרימה · 30 דקות' :
+               'מדיטציה מתקדמת · 20 דקות'}
+            </div>
+          </div>
+        </div>
+        <div className="pic-card">
+          <div className="pic-icon"><IconLeaf size={18}/></div>
+          <div>
+            <div className="pic-label">רמת תרגול</div>
+            <div className="pic-val">
+              {sessions < 5 ? '🌱 מתחילה' : sessions < 15 ? '🌿 מתרגלת' : '🌳 מתקדמת'}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+window.Profile = Profile;
+window.ProfileTabIcon = ProfileTabIcon;
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
   </script>
